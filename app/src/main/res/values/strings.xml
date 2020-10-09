@@ -19,4 +19,7 @@
     <string name="masukkan_password">Masukkan Password</string>
     <string name="register">Register</string>
     <string name="login">Login</string>
+    <string name="upload">Upload</string>
+    <string name="nama_file">Nama File</string>
+    <string name="default_web_client_id">webid</string>
 </resources>
