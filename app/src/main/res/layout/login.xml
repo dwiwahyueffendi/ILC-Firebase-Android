@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/loginFirebase"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/login_firebase">
+
+    </TextView>
+
+    <EditText
+        android:layout_below="@id/loginFirebase"
+        android:id="@+id/Username"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="#fff"
+        android:drawablePadding="20dp"
+        android:hint="@string/masukkan_username"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:layout_below="@id/Username"
+        android:id="@+id/et_password"
+        android:background="#fff"
+        android:drawablePadding="20dp"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:hint="@string/masukkan_password"
+        android:inputType="textVisiblePassword">
+    </EditText>
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btn_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_password"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/btn_google"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/login"
+        android:textAllCaps="false">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="@string/register"
+        android:textAllCaps="false">
+    </Button>
+
+</RelativeLayout>
