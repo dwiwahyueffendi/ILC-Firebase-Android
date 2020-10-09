@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.provider.Settings.Global.getString
 import android.util.Log
 import android.widget.Toast
+import com.example.firebase.R.layout.activity_login
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -21,7 +22,7 @@ class LoginActivity {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(activity_login)
 
         auth = FirebaseAuth.getInstance()
 
