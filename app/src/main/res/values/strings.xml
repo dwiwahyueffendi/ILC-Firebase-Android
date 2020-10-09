@@ -14,4 +14,9 @@
     <string name="masukkan_password">Masukkan Password</string>
     <string name="register">Register</string>
     <string name="login">Login</string>
+    <string name="register_firebase">Register Firebase</string>
+    <string name="masukkan_username">Masukkan Username</string>
+    <string name="masukkan_password">Masukkan Password</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
 </resources>

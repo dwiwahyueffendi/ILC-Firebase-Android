@@ -14,7 +14,6 @@
         android:textStyle="bold"
         android:gravity="center"
         android:text="@string/login_firebase">
-
     </TextView>
 
     <EditText
@@ -35,7 +34,7 @@
 
     <EditText
         android:layout_below="@id/Username"
-        android:id="@+id/et_password"
+        android:id="@+id/Password"
         android:background="#fff"
         android:drawablePadding="20dp"
         android:layout_centerVertical="true"
@@ -54,10 +53,11 @@
         android:id="@+id/btn_google"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_password"
+        android:layout_below="@id/Password"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="20dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp" >
+    </com.google.android.gms.common.SignInButton>
 
     <Button
         android:id="@+id/btn_login"
@@ -69,7 +69,6 @@
         android:layout_marginRight="20dp"
         android:text="@string/login"
         android:textAllCaps="false">
-
     </Button>
 
     <Button
