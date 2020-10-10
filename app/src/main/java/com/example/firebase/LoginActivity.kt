@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.provider.Settings.Global.getString
 import android.util.Log
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.example.firebase.R.layout.activity_login
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -54,7 +55,7 @@ class LoginActivity {
 
         }
 
-        btn_register_mv.setOnClickListener {
+        btn_register.setOnClickListener {
             Intent(this@LoginActivity, RegisterActivity::class.java).also {
                 startActivity(it)
             }
