@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.provider.Settings.Global.getString
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import com.example.firebase.R.layout.activity_login
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -14,8 +15,9 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import kotlinx.android.synthetic.main.activity_register.*
 
-class LoginActivity {
+class LoginActivity: AppCompatActivity(){
     private lateinit var auth: FirebaseAuth
     private val RC_SIGN_IN = 1
     private lateinit var mGoogleSignInClient: GoogleSignInClient

@@ -14,7 +14,7 @@ import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity {
+class HomeActivity: AppCompactActivity() {
     private var req = 1
     private var status = 11
     private lateinit var filepath : Uri
