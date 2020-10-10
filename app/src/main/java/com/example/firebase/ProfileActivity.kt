@@ -9,6 +9,7 @@ import android.provider.MediaStore
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
@@ -16,7 +17,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_profile.*
 import java.io.ByteArrayOutputStream
 
-class ProfileActivity {
+class ProfileActivity: AppCompatActivity() {
     lateinit var filepath: Uri
     var req = 1
     lateinit var auth : FirebaseAuth
@@ -25,7 +26,7 @@ class ProfileActivity {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        mImageView = findViewById(R.id.profile)
+        mImageView = findViewById(R.id.iv_profile)
 
         auth = FirebaseAuth.getInstance()
 
@@ -39,20 +40,20 @@ class ProfileActivity {
             }
 
             nama.setText(user.displayName)
-            email.setText(user.email)
+            et_email.setText(user.email)
 
             if (user.isEmailVerified){
-                verif.visibility = View.VISIBLE
+                iv_verif.visibility = View.VISIBLE
             }else {
-                unverif.visibility = View.VISIBLE
+                iv_unverif.visibility = View.VISIBLE
             }
             if(user.phoneNumber.isNullOrEmpty()){
-                loc.setText("Nomor Telepon : ")
+                et_loc.setText("Nomor Telepon : ")
             }else {
-                loc.setText(user.phoneNumber)
+                et_loc.setText(user.phoneNumber)
             }
         }
-        profile.setOnClickListener {
+        iv_profile.setOnClickListener {
             fileChooser()
         }
 
@@ -62,16 +63,16 @@ class ProfileActivity {
                 user?.photoUrl == null -> Uri.parse("https://picsum.photos/seed/picsum/200/300")
                 else -> user.photoUrl
             }
-            val nama  = nama.text.toString().trim()
+            val mnama  = nama.text.toString().trim()
 
-            if (nama.isEmpty()){
+            if (mnama.isEmpty()){
                 nama.error = "Masukkan Nama Anda"
                 nama.requestFocus()
                 return@setOnClickListener
             }
 
             UserProfileChangeRequest.Builder()
-                .setDisplayName(nama)
+                .setDisplayName(mnama)
                 .setPhotoUri(images)
                 .build().also {
                     user?.updateProfile(it)?.addOnCompleteListener {
@@ -86,7 +87,7 @@ class ProfileActivity {
 
         }
 
-        unverif.setOnClickListener {
+        iv_unverif.setOnClickListener {
             user?.sendEmailVerification()?.addOnCompleteListener{
                 if (it.isSuccessful){
                     Toast.makeText(this,"Verification Email has been sent.", Toast.LENGTH_SHORT).show()
@@ -127,7 +128,7 @@ class ProfileActivity {
                     it.result?.let {
                         filepath = it
                         Toast.makeText(this,"File Uploaded", Toast.LENGTH_LONG).show()
-                        profile.setImageBitmap(imgBitmap)
+                        iv_profile.setImageBitmap(imgBitmap)
                     }
 
                 }
