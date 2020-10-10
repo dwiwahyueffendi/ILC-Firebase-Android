@@ -27,13 +27,13 @@ class HomeActivity {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        mNama = findViewById<EditText>(R.id.et_nama)
-        mImage = findViewById<ImageView>(R.id.iv_image)
+        mNama = findViewById<EditText>(R.id.nama)
+        mImage = findViewById<ImageView>(R.id.image)
 
         mStorage = FirebaseStorage.getInstance().getReference("uploads/")
         mDatabase = FirebaseDatabase.getInstance().getReference("uploads/")
 
-        iv_image.setOnClickListener {
+        image.setOnClickListener {
             FileChooser()
         }
 

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".HomeActivity">
 
     <Button
         android:id="@+id/btn_upload"
@@ -13,11 +16,11 @@
         android:text="@string/upload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/et_nama"
+        app:layout_constraintStart_toEndOf="@+id/nama"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_nama"
+        android:id="@+id/nama"
         android:layout_width="193dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
@@ -28,7 +31,7 @@
     </EditText>
 
     <ImageView
-        android:id="@+id/iv_image"
+        android:id="@+id/image"
         android:layout_width="353dp"
         android:layout_height="280dp"
         android:layout_marginTop="48dp"
