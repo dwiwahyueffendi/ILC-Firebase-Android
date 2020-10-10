@@ -25,7 +25,7 @@ class ProfileActivity {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        mImageView = findViewById(R.id.iv_profile)
+        mImageView = findViewById(R.id.profile)
 
         auth = FirebaseAuth.getInstance()
 
@@ -38,21 +38,21 @@ class ProfileActivity {
                 Picasso.get().load("https://picsum.photos/seed/picsum/200/300").into(mImageView)
             }
 
-            et_nama.setText(user.displayName)
-            et_email.setText(user.email)
+            nama.setText(user.displayName)
+            email.setText(user.email)
 
             if (user.isEmailVerified){
-                iv_verif.visibility = View.VISIBLE
+                verif.visibility = View.VISIBLE
             }else {
-                iv_unverif.visibility = View.VISIBLE
+                unverif.visibility = View.VISIBLE
             }
             if(user.phoneNumber.isNullOrEmpty()){
-                et_loc.setText("Masukkan Nomor Telepon Anda")
+                loc.setText("Nomor Telepon : ")
             }else {
-                et_loc.setText(user.phoneNumber)
+                loc.setText(user.phoneNumber)
             }
         }
-        iv_profile.setOnClickListener {
+        profile.setOnClickListener {
             fileChooser()
         }
 
@@ -62,11 +62,11 @@ class ProfileActivity {
                 user?.photoUrl == null -> Uri.parse("https://picsum.photos/seed/picsum/200/300")
                 else -> user.photoUrl
             }
-            val nama  = et_nama.text.toString().trim()
+            val nama  = nama.text.toString().trim()
 
             if (nama.isEmpty()){
-                et_nama.error = "Masukkan Nama Anda"
-                et_nama.requestFocus()
+                nama.error = "Masukkan Nama Anda"
+                nama.requestFocus()
                 return@setOnClickListener
             }
 
@@ -86,7 +86,7 @@ class ProfileActivity {
 
         }
 
-        iv_unverif.setOnClickListener {
+        unverif.setOnClickListener {
             user?.sendEmailVerification()?.addOnCompleteListener{
                 if (it.isSuccessful){
                     Toast.makeText(this,"Verification Email has been sent.", Toast.LENGTH_SHORT).show()
@@ -127,7 +127,7 @@ class ProfileActivity {
                     it.result?.let {
                         filepath = it
                         Toast.makeText(this,"File Uploaded", Toast.LENGTH_LONG).show()
-                        iv_profile.setImageBitmap(imgBitmap)
+                        profile.setImageBitmap(imgBitmap)
                     }
 
                 }

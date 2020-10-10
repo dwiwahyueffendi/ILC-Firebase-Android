@@ -22,4 +22,8 @@
     <string name="upload">Upload</string>
     <string name="nama_file">Nama File</string>
     <string name="default_web_client_id">webid</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="email">Email</string>
+    <string name="fullname">Fullname</string>
+    <string name="save">SAVE</string>
 </resources>

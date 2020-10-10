@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_profile"
+        android:id="@+id/profile"
         android:layout_width="100dp"
         android:layout_height="90dp"
         android:layout_marginTop="100dp"
@@ -18,19 +19,19 @@
 
 
     <ImageView
-        android:id="@+id/iv_verif"
+        android:id="@+id/verif"
         android:layout_width="35dp"
         android:layout_height="40dp"
         android:layout_marginTop="300dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.223"
-        app:layout_constraintStart_toEndOf="@+id/et_email"
+        app:layout_constraintStart_toEndOf="@+id/email"
         app:layout_constraintTop_toTopOf="parent">
     </ImageView>
 
     <ImageView
-        android:id="@+id/iv_unverif"
+        android:id="@+id/unverif"
         android:layout_width="35dp"
         android:layout_height="40dp"
         android:layout_marginTop="300dp"
@@ -38,7 +39,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.223"
-        app:layout_constraintStart_toEndOf="@+id/et_email"
+        app:layout_constraintStart_toEndOf="@+id/email"
         app:layout_constraintTop_toTopOf="parent">
     </ImageView>
 
@@ -48,35 +49,35 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:src="@drawable/unverifikasi"
-        android:hint="Fullname"
+        android:hint="@string/fullname"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profile">
+        app:layout_constraintTop_toBottomOf="@+id/profile">
     </EditText>
 
     <EditText
-        android:id="@+id/et_email"
+        android:id="@+id/email"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:hint="Email"
+        android:hint="@string/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.328"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nama">
+        app:layout_constraintTop_toBottomOf="@+id/nama">
     </EditText>
 
     <EditText
-        android:id="@+id/et_loc"
+        android:id="@+id/loc"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:hint="Nomor Telepon"
+        android:hint="@string/nomor_telepon"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email">
+        app:layout_constraintTop_toBottomOf="@+id/email">
 
     </EditText>
 
@@ -86,12 +87,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:background="@color/colorAccent"
-        android:text="SAVE"
+        android:text="@string/save"
         android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_loc">
+        app:layout_constraintTop_toBottomOf="@+id/loc">
     </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
