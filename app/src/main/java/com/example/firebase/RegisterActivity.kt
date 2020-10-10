@@ -41,21 +41,21 @@ class RegisterActivity {
         })
 
         btn_register.setOnClickListener {
-            val email = et_username.text.toString().trim()
-            val password = et_password.text.toString().trim()
+            val email = Username.text.toString().trim()
+            val password = Password.text.toString().trim()
 
             if (email.isEmpty()) {
-                et_username.error = "Silahkan Masukkan Email Anda"
-                et_username.requestFocus()
+                Username.error = "Silahkan Masukkan Email Anda"
+                Username.requestFocus()
                 return@setOnClickListener
             } else if (password.isEmpty()) {
-                et_password.error = "Silahkan Masukkan Password Anda"
-                et_password.requestFocus()
+                Password.error = "Silahkan Masukkan Password Anda"
+                Password.requestFocus()
                 return@setOnClickListener
             }
             registerUser(email, password)
         }
-        btn_login_mv.setOnClickListener {
+        btn_login.setOnClickListener {
             Intent(this, LoginActivity::class.java).also {
                 startActivity(it)
             }
